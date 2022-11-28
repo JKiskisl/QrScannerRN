@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   Alert,
 } from 'react-native'
-import { getDatabase } from 'firebase/database'
+import { getDatabase, ref, child, push, update, remove } from 'firebase/database'
 
 const DeleteorUpdate = ({route}) => {
     const [description, setDescription] = useState('')
@@ -15,15 +15,11 @@ const DeleteorUpdate = ({route}) => {
   
     const { postpass } = route.params
   
-  
+    const db = getDatabase();
+    const dbRef = ref(db, 'scannedItems/' + postpass.id);
     handleSubmit = () => {
-      const db = getDatabase();
-      const reference = ref(db,'scannedItems')
-
-
-      const newRef = reference.ref('scannedItems/' + postpass.id)
-      newRef
-        .update({
+        
+        update(dbRef,{
           id: postpass.id,
           description: description,
         })
@@ -33,9 +29,7 @@ const DeleteorUpdate = ({route}) => {
     }
   
     const deleteItem = (id) => {
-      reference
-        .ref('scannedItems/' + id)
-        .remove()
+        remove(dbRef)
         .then(() => console.log('success', id))
         .catch(() => console.log('nope'))
     }

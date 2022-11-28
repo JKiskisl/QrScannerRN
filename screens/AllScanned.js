@@ -4,7 +4,7 @@ import { FlatList } from 'react-native-gesture-handler'
 import {getDatabase, ref, set, push, Database, onValue, on} from 'firebase/database'
 import { get } from 'react-native/Libraries/Utilities/PixelRatio'
 
-const AllScanned = () => {
+const AllScanned = ({navigation}) => {
     const [scannedItems, setScannedItems] = useState([])
 
     // const db = getDatabase();
