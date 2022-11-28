@@ -12,7 +12,7 @@ export const HomeScreen = ({navigation}) => {
     <View style={styles.container}>
       <Button title='Sign Out' onPress={handleLogout} />
       <Button title="View all scanned items" onPress={()=> navigation.navigate('AllScanned')}/>
-      <Button title="Open camera"onPress={()=> navigation.navigate('Scan')}/>
+      <Button title="Scan!"onPress={()=> navigation.navigate('Scan')}/>
     </View>
   );
 };
