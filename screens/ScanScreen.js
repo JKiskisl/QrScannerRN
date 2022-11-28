@@ -3,16 +3,37 @@ import React, {useState, useEffect} from 'react'
 
 import { BarCodeScanner } from 'expo-barcode-scanner';
 
+import {getDatabase, ref, set, push} from 'firebase/database'
+
 
 const ScanScreen = () => {
     const [hasPermission, setHasPermission] = useState(null);
     const [scanned, setScanned] = useState(false);
     const [text, setText] = useState("Not yet scanned");
+
+    const [description, setDescription] = useState('')
+    const [id, setId] = useState('')
     /*
     useEffect(() => {
       askPermissions();
     }, [hasPermission]);
     */
+
+
+    function storeScannedItems(description){
+        const db = getDatabase();
+        const reference = ref(db,'scannedItems/');
+        set(reference, {
+            id: id,
+            description: description,
+        })
+        .then(()=> console.log('Data saved!'))
+
+        setDescription('')
+        setId('')
+    }
+
+
     const askPermissions = () => {
       (async () => {
         console.log("Asking for permissions");
@@ -23,6 +44,7 @@ const ScanScreen = () => {
   
     const handleBarCodeScanned = ({ type, data }) => {
       setScanned(true);
+      storeScannedItems(data);
       alert(`Bar code with type ${type} and data ${data} has been scanned!`);
     };
     if (hasPermission && hasPermission) {
