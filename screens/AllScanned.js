@@ -2,29 +2,13 @@ import { StyleSheet, Text, View, Button } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { FlatList } from 'react-native-gesture-handler'
 import {getDatabase, ref, set, push, Database, onValue, on} from 'firebase/database'
-import { get } from 'react-native/Libraries/Utilities/PixelRatio'
+
 
 const AllScanned = ({navigation}) => {
     const [scannedItems, setScannedItems] = useState([])
 
-    // const db = getDatabase();
-    // const reference = ref(db, 'scannedItems');
-
-    // const dbRef = ref(getDatabase());
-    // get(child(dbRef, `scannedItems/${itemId}`))
-    // .then((snapshot)=>{
-    //     if(snapshot.exists()){
-    //         console.log(snapshot.val());
-    //     }
-    //     else {
-    //         console.log("No data available");
-    //     }
-    // }).catch((error) => {
-    //     console.error(error);
-    // });
-
     const db = getDatabase()
-    // const dbRef = ref(db,'scannedItems');
+
   
     useEffect(() => {
 
