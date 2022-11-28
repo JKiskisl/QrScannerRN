@@ -3,7 +3,7 @@ import React, {useState, useEffect} from 'react'
 
 import { BarCodeScanner } from 'expo-barcode-scanner';
 
-import {getDatabase, ref, set, push} from 'firebase/database'
+import {getDatabase, ref, set, push, Database} from 'firebase/database'
 
 
 const ScanScreen = () => {
@@ -22,9 +22,11 @@ const ScanScreen = () => {
 
     function storeScannedItems(description){
         const db = getDatabase();
-        const reference = ref(db,'scannedItems/');
-        set(reference, {
-            id: id,
+        const reference = ref(db,'scannedItems');
+        
+        const newRef = push(reference);
+        set(newRef, {
+            id: newRef.key,
             description: description,
         })
         .then(()=> console.log('Data saved!'))

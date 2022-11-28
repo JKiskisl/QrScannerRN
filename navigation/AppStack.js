@@ -5,6 +5,7 @@ import { HomeScreen } from '../screens';
 
 import ScanScreen from '../screens/ScanScreen';
 import AllScanned from '../screens/AllScanned';
+import DeleteorUpdate from '../screens/DeleteorUpdate';
 
 const Stack = createStackNavigator();
 
@@ -14,6 +15,7 @@ export const AppStack = () => {
       <Stack.Screen name='Home' component={HomeScreen} />
       <Stack.Screen name='Scan' component={ScanScreen}/>
       <Stack.Screen name='AllScanned' component={AllScanned}/>
+      <Stack.Screen name='DeleteorUpdate' component={DeleteorUpdate}/>
     </Stack.Navigator>
   );
 };
