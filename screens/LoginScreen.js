@@ -27,7 +27,7 @@ export const LoginScreen = ({ navigation }) => {
           {/* LogoContainer: consits app logo and screen title */}
           <View style={styles.logoContainer}>
             <Logo uri={Images.logo} />
-            <Text style={styles.screenTitle}>Welcome back!</Text>
+            <Text style={styles.screenTitle}>Customer app</Text>
           </View>
           <Formik
             initialValues={{

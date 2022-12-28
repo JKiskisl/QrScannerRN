@@ -5,13 +5,13 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 // add firebase config
 const firebaseConfig = {
-  apiKey: "AIzaSyDa1E20dgGAYeB8akYnhXdrkhF1pTLzGQ8",
-  authDomain: "fir-expo-32994.firebaseapp.com",
-  databaseURL: "https://fir-expo-32994-default-rtdb.firebaseio.com",
-  projectId: "fir-expo-32994",
-  storageBucket: "fir-expo-32994.appspot.com",
-  messagingSenderId: "275530945181",
-  appId: "1:275530945181:web:4b1f321752efb804273a74"
+  apiKey: "AIzaSyAOBISq_tI3Yl9A-8_vexGIiK6Qo8zfI34",
+  authDomain: "finalproj-aecf9.firebaseapp.com",
+  databaseURL: "https://finalproj-aecf9-default-rtdb.firebaseio.com",
+  projectId: "finalproj-aecf9",
+  storageBucket: "finalproj-aecf9.appspot.com",
+  messagingSenderId: "208383206617",
+  appId: "1:208383206617:web:1a61a436ac745c254c8ac8"
 };
 
 // initialize firebase

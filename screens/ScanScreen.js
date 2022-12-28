@@ -13,6 +13,11 @@ const ScanScreen = () => {
 
     const [description, setDescription] = useState('')
     const [id, setId] = useState('')
+    const [pending, setPending] = useState('')
+    const [accepted, setAccepted] = useState('')
+    const [declined, setDeclined] = useState('')
+    const [completed, setCompleted] = useState('')
+
     /*
     useEffect(() => {
       askPermissions();
@@ -20,7 +25,7 @@ const ScanScreen = () => {
     */
 
 
-    function storeScannedItems(description){
+    function storeScannedItems(description, pending, accepted, declined){
         const db = getDatabase();
         const reference = ref(db,'scannedItems');
         
@@ -28,11 +33,19 @@ const ScanScreen = () => {
         set(newRef, {
             id: newRef.key,
             description: description,
+            pending: true,
+            accepted: false,
+            declined: false,
+            completed: false,
         })
         .then(()=> console.log('Data saved!'))
 
         setDescription('')
         setId('')
+        setPending('')
+        setAccepted('')
+        setDeclined('')
+        setCompleted('')
     }
 
 

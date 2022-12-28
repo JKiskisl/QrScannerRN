@@ -57,8 +57,7 @@ const DeleteorUpdate = ({route}) => {
           </TouchableOpacity>
         </View>
         <View style={styles.addButtonContainer}>
-          <TouchableOpacity onPress={() => deleteItem(postpass.id)}
-          onPressIn={() => successDelete()}>
+          <TouchableOpacity onPress={() => deleteItem(postpass.id)}>
             <View style={styles.deleteButton}>
               <Text style={styles.addButtonText}>DELETE</Text>
             </View>
