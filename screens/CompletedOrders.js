@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Button } from 'react-native'
+import { StyleSheet, Text, View, Button, Alert } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { FlatList } from 'react-native-gesture-handler'
 import {getDatabase, ref, set, push, Database, onValue, on} from 'firebase/database'
@@ -37,9 +37,8 @@ const CompletedOrders = ({navigation}) => {
               return (
                 <View style={styles.posts}>
                   <Button title={item.item.description}
-                  style={styles.name} 
-                  onPress={()=> navigation.navigate('DeleteorUpdate', 
-                    {postpass: item.item})}>
+                  style={styles.name}
+                  onPress={()=> Alert.alert("Finished!")}>
                   </Button>
                 </View>
               )
