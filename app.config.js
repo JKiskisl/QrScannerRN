@@ -8,7 +8,7 @@ export default {
     platforms: ['ios', 'android'],
     version: '0.15.0',
     orientation: 'portrait',
-    icon: './assets/flame.png',
+    icon: './assets/food.jpg',
     splash: {
       image: './assets/splash.png',
       resizeMode: 'cover',
