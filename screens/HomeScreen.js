@@ -11,8 +11,8 @@ export const HomeScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Button title='Sign Out' onPress={handleLogout} />
-      <Button title='AcceptedOrders' onPress={()=> navigation.navigate('AcceptedOrders')}/>
-      <Button title='CompletedOrders' onPress={() => navigation.navigate('CompletedOrders')}/>
+      <Button title='Accepted Orders' onPress={()=> navigation.navigate('AcceptedOrders')}/>
+      <Button title='Completed Orders' onPress={() => navigation.navigate('CompletedOrders')}/>
       <Button title="Scan!"onPress={()=> navigation.navigate('Scan')}/>
     </View>
   );
